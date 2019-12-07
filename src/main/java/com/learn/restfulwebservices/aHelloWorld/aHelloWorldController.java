@@ -22,4 +22,9 @@ public class aHelloWorldController {
         return "Hello World - From getMapping";
     }
 
+    @GetMapping(path="/getBean")
+    public HelloWorldReturnBean helloWorldReturnBean() {
+        return new HelloWorldReturnBean("Hello World - From HelloWorldReturnBean");
+    }
+
 }

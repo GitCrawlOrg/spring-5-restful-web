@@ -16,7 +16,16 @@ http://localhost:8089/api/v0/hello-world/requestMapping
 ```
 http://localhost:8089/api/v0/hello-world/getMapping
 
-3. 
+3. GettMapping returning a bean (JSON Response)
+```java
+@GetMapping(path="/getBean")
+    public HelloWorldReturnBean helloWorldReturnBean() {
+        return new HelloWorldReturnBean("Hello World - From HelloWorldReturnBean");
+    }
+```
+http://localhost:8089/api/v0/hello-world/getBean
+
+
 
 Retrieve all Users - GET /users
 
