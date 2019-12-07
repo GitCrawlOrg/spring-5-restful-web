@@ -10,7 +10,13 @@ server.port=8089
 ```
 http://localhost:8089/api/v0/hello-world/requestMapping
 
-2. 
+2. GetMapping
+```java
+@GetMapping(path="/getMapping")
+```
+http://localhost:8089/api/v0/hello-world/getMapping
+
+3. 
 
 Retrieve all Users - GET /users
 

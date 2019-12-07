@@ -1,5 +1,6 @@
 package com.learn.restfulwebservices.aHelloWorld;
 
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,6 +15,11 @@ public class aHelloWorldController {
     @RequestMapping(method= RequestMethod.GET,path="/requestMapping")
     public String helloWorldViaRequestMapping() {
         return "Hello World - From requestMapping";
+    }
+
+    @GetMapping(path="/getMapping")
+    public String helloWorldViaGetMapping() {
+        return "Hello World - From getMapping";
     }
 
 }
