@@ -1,5 +1,17 @@
 # spring-5-restful-web
 
+Port used = 8089
+```shell script
+server.port=8089
+```
+1. HelloWorld using Request Mapping
+```java
+   @RequestMapping(method= RequestMethod.GET,path="/requestMapping")
+```
+http://localhost:8089/api/v0/hello-world/requestMapping
+
+2. 
+
 Retrieve all Users - GET /users
 
 Create a User - POST /users
