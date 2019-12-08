@@ -2,6 +2,8 @@ package com.learn.restfulwebservices.bHardCodedData;
 
 import lombok.*;
 
+import javax.validation.constraints.Past;
+import javax.validation.constraints.Size;
 import java.util.Date;
 
 @Getter
@@ -12,6 +14,8 @@ import java.util.Date;
 @AllArgsConstructor
 public class User {
 	private Integer id;
+	@Size(min=2,message = "Names should be atleast characters long")
 	private String name;
+	@Past(message = "DOB Cannot be in the Future")
 	private Date dob;
 }

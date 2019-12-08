@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import javax.validation.Valid;
 import java.net.URI;
 import java.util.List;
 
@@ -36,7 +37,7 @@ public class UserController {
 
 	//Add a new User
 	@PostMapping("/users")
-	public ResponseEntity<Object> addNewUser(@RequestBody User user){
+	public ResponseEntity<Object> addNewUser(@Valid  @RequestBody User user){
 		User savedUser = userDAOService.save(user);
 
 		//Send the URI of the saved Object
