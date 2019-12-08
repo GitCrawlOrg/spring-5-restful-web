@@ -33,10 +33,7 @@ public List<User> retrieveAllUsers(){
     return userDAOService.findAll();
 }
 ```
-
 http://localhost:8089/api/hardCodedData/users
-
-<br>
 
 ### Get a user based on id (from get request parameter)
 
@@ -59,6 +56,5 @@ public User findById(int id) {
     return getUsers().get(id);
 	}
 ```
-
 http://localhost:8089/api/hardCodedData/user/1
 
