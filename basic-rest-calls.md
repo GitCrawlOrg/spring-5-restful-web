@@ -21,6 +21,11 @@ public List<User> findAll() {
 
 In the Controller
 
+No need to create an object of the DAOService. Use @Autowired annotation to get the object of the DAOService
+```java
+@Autowired
+private UserDAOService userDAOService;
+```
 ```java
 //Retrieve all users
 @GetMapping(path = "/users")
