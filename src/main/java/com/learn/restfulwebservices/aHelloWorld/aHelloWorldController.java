@@ -28,5 +28,4 @@ public class aHelloWorldController {
     public String helloWorldPathVariable(@PathVariable("var_name") String name) {
         return String.format("The Value returned is %s", name);
     }
-
 }
