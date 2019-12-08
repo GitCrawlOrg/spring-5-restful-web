@@ -1,6 +1,6 @@
 package com.learn.restfulwebservices.bHardCodedData;
 
-import org.apache.coyote.Response;
+import com.learn.restfulwebservices.bHardCodedData.customException.UserNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -24,8 +24,14 @@ public class UserController {
 
 	//Retrieve specific users
 	@GetMapping(path = "/user/{id}")
-	public User retrieveUserById(@PathVariable int id){
-		return userDAOService.findById(id);
+	public User retrieveUserById(@PathVariable int id) throws UserNotFoundException {
+		User user = userDAOService.findById(id);
+
+		//If user is not found
+		if(user == null){
+			throw new UserNotFoundException("User with id " + id +" is not found");
+		}
+		return user;
 	}
 
 	//Add a new User

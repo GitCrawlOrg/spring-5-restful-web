@@ -31,6 +31,11 @@ public class UserDAOService {
 	
 	// Retrieve users by Id
 	public User findById(int id) {
+		//For ArrayIndexOutOfBounds
+		if(id >= usersCount){
+			return null;
+		}
+
 		if(getUsers().get(id) == null) {
 			return null;
 		}
