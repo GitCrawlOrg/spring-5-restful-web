@@ -15,10 +15,13 @@ public class UserDAOService {
 	@Getter
 	@Setter
 	private static List<User> users = new ArrayList<>();
-	
+	//To keep the number of objects (to be used while inserting data)
+	static int usersCount;
+
 	static {
 		users.add(new User(1, "Nitin", new Date()));
 		users.add(new User(2, "Kirti", new Date()));
+		usersCount = users.size();
 	}
 
 	// Retrieve all users
@@ -34,5 +37,12 @@ public class UserDAOService {
 		return getUsers().get(id);
 	}
 
-
+	//Save a new User
+	public User save(User user) {
+		if(user.getId() == null){
+			user.setId(++usersCount);
+		}
+		users.add(user);
+		return user;
+	}
 }
