@@ -36,5 +36,25 @@ with Request Body RAW and JSON
 }
 ```
 
+Returns 200 OK
 
+### POST Method enhancement to return HTTP Status Code adn URI
 
+```java
+//Add a new User
+@PostMapping("/users")
+public ResponseEntity<Object> addNewUser(@RequestBody User user){
+    User savedUser = userDAOService.save(user);
+
+    //Send the URI of the saved Object
+    URI location = ServletUriComponentsBuilder
+            .fromCurrentRequest()
+            .path("/{id}")
+            .buildAndExpand(savedUser.getId()).toUri();
+
+    return ResponseEntity.created(location).build();
+}
+```
+Send post request
+
+Returns 201 Created

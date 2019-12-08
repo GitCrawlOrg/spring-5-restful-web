@@ -38,11 +38,11 @@ public class UserDAOService {
 	}
 
 	//Save a new User
-	public void save(User user) {
+	public User save(User user) {
 		if(user.getId() == null){
 			user.setId(++usersCount);
 		}
 		users.add(user);
-		return;
+		return user;
 	}
 }
