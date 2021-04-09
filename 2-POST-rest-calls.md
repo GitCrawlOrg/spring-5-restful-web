@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 # POST Rest Calls
+=======
+    #POST Rest Calls
+>>>>>>> Stashed changes
 
 ### Creating a List of Objects for the Demo Purposes
 
